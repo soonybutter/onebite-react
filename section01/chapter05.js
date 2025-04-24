@@ -6,6 +6,7 @@ let str = "20";
 
 const result = num +str;
 console.log(result); //1020
+<<<<<<< HEAD
 
 //2. 명시적 형 변환
 // -> 프로그래머 내장함수 등을 이용해서 직접 형 변환을 명시
@@ -23,3 +24,5 @@ console.log(strToNum2); //10
 let num1 = 20;
 let numToStr1 = String(num1);
 console.log(numToStr1+"입니다."); //20입니다.
+=======
+>>>>>>> edc0bfdc8a19900783c82ce1b42890a24c6407cd
