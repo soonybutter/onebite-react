@@ -6,10 +6,13 @@ function add(a, b, callback){
     },3000);
 }
 
+// 인수로 '비동기처리의 결과값으로 사용하고자 하는 콜백함수'를 전달
+// 콜백함수
 add(1,2, (value)=>{
     console.log(value);
 });
 
+//-----------------------------------------------------------
 
 // 음식을 주문하는 상황
 function orderFood(callback){
@@ -37,7 +40,12 @@ function freezeFood(food, callback){
 
 
 // 비동기 작업의 인수를 또다른 비동기 작업의 인수로 전달이 가능하다!
-// but, '콜백지옥' 문제발생 가능.. -> 개선방안 : promise
+// 콜백함수 안에 또 다른 콜백함수를 호출가능!
+// but, '콜백지옥' 문제발생 가능..
+// -> 개선방안 : promise
+
+
+// 콜백함수
 orderFood((food)=>{
     console.log(food);
 
@@ -49,4 +57,5 @@ orderFood((food)=>{
         });
     });
 });
+
 
