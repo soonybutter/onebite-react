@@ -13,6 +13,8 @@ const Register=()=>{
     const [country, setCountry] = useState("");
     const [bio, setBio] = useState("");
 
+    // useState함수: React에서 컴포넌트의 상태를 만들고, 관리함 (값을 기억)
+    // set함수: 상태변경함수 (for 렌더링)
     const onChangeName =(e)=>{
         setName(e.target.value);
     };
