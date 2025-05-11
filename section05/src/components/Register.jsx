@@ -1,4 +1,5 @@
-import {useState} from "react";
+import {useState, useRef} from "react";
+
 
 // 간단한 회원가입 폼
 // 1. 이름
@@ -7,59 +8,89 @@ import {useState} from "react";
 // 4. 자기소개
 
 const Register=()=>{
+    
+    const[input, setInput] = useState({
+        name:"",
+        birth:"",
+        country:"",
+        bio:"",
+    });
+    
+    const countRef = useRef(0);
+    const inputRef =useRef();
 
-    const [name, setName] = useState("이름");
-    const [birth, setBirth] = useState("");
-    const [country, setCountry] = useState("");
-    const [bio, setBio] = useState("");
+    let count =0;
 
-    // useState함수: React에서 컴포넌트의 상태를 만들고, 관리함 (값을 기억)
-    // set함수: 상태변경함수 (for 렌더링)
-    const onChangeName =(e)=>{
-        setName(e.target.value);
+    // 통합이벤트 핸들러
+    const onChange =(e)=>{
+        //countRef.current++;
+        count++;
+        console.log(count);
+
+        setInput({
+            ...input,
+            [e.target.name]: e.target.value
+        });
     };
 
-    const onChangeBirth =(e)=>{
-        setBirth(e.target.value);
-    }
+    const onSubmit=()=>{
+        if(input.name ===""){
+            // 이름을 입력하는 DOM 요소 포커스
+            inputRef.current.focus();
+        }
+    };
 
-    const onChangeCountry =(e)=>{
-        setCountry(e.target.value);
-    }
-
-    const onChangeBio=(e)=>{
-        setBio(e.target.value);
-    }
-
+   
     return(
         <div>
+            
             <h1>Sign up!‧｡♥｡‧˚♡˚ ‧｡♥｡‧˚♡˚ </h1>
             <div>
                 <input 
-                    value ={name}
-                    onChange={onChangeName}
+                    name="name"
+                    ref={inputRef}
+                    value ={input.name}
+                    onChange={onChange}
                     placeholder={"이름"}
                 />
             </div>
+         
             <div>
                 <input
-                value={birth}
-                onChange={onChangeBirth}
+                name="birth"
+                value={input.birth}
+                onChange={onChange}
                 type="date"
                 />
             </div>
-
+            
             <div>
-                <select value={country} onChange={onChangeCountry}>
+                <select 
+                    name="country"
+                    value={input.country} 
+                    onChange={onChange}
+                    >
+                    <option>선택하기</option>
                     <option>한국</option>
                     <option>미국</option>
                     <option>영국</option>
                 </select>
             </div>
-            
+         
             <div>
-                <textarea value={bio} onChange={onChangeBio}/>
-                {bio}
+                <textarea
+                name="bio"
+                value={input.bio}
+                onChange={onChange}
+                />
+            </div>
+
+            <div>
+                <button 
+                    onClick={onSubmit}
+                    type="submit">
+                제출
+                </button>
             </div>
         </div>
     )
