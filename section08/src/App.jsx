@@ -30,16 +30,18 @@ function App() {
   const [todos, setTodos] = useState(mockData);
   const idRef =useRef(3);
 
+ 
   // setTodos 를 통해 state 값 변경시켜야함.
-  const onCreate = (content)=>{
-    const newTodo ={
+  const onCreate = (content) => {
+    const newTodo = {
       id: idRef.current++,
       isDone: false,
       content: content,
-      date: new Date().getTime()
-    }
+      date: new Date().getTime(),
+    };
 
-    setTodos([newTodo,...todos]);
+    // setTodos 호출하여 인수로 새로운 값을 newTodo에 넣음.
+    setTodos([newTodo, ...todos]);
   }
 
   // Editor 컴포넌트에 onCreate 함수 전달
@@ -47,7 +49,7 @@ function App() {
     <div className="App">
       <Header/>
       <Editor onCreate={onCreate}/>
-      <List/>
+      <List todos ={todos}/>
     </div>
   )
    

@@ -6,6 +6,7 @@ const Editor =({onCreate})=>{
     const [content, setContent]= useState("");
     const contentRef = useRef();
 
+    // 입력되는 txt가 content에 저장되도록 함
     const onChangeContent=(e)=>{
         setContent(e.target.value);
     };
