@@ -25,12 +25,14 @@ import {memo} from 'react';
   );
 };
 
+/*
 // 고차 컴포넌트 (HOC)
 export default memo(TodoItem,(prevProps, nextProps)=>{
   // 최적화 함수를 커스터마이징하기!
   // -> 반환값에 따라, props가 바뀌었는지 안바뀌었는지 판단
   // T : props 바뀌지 않음 -> 리렌더링 X
   // F : props 바뀜 -> 리렌더링 0
+  // 왜 ? -> memo(): 얕은비교만 가능('=='), props를 일일이 비교할 수 없기때문
 
   if(prevProps.id !== nextProps.id) return false;
   if(prevProps.isDone !== nextProps.isDone) return false;
@@ -40,3 +42,6 @@ export default memo(TodoItem,(prevProps, nextProps)=>{
   return true;
 
 });
+*/
+
+export default memo(TodoItem);

@@ -1,8 +1,9 @@
 import './App.css'
-import { useState, useRef, useReducer } from "react";
+import { useState, useRef, useReducer, useCallback } from "react";
 import Editor from "./components/Editor";
 import List from "./components/List";
 import Header from "./components/Header";
+
 
 
 const mockData=[
@@ -51,7 +52,7 @@ function App() {
 
  
   // 생성 함수
-  const onCreate = (content) => {
+  const onCreate= useCallback((content) => {
     dispatch({
       type: "CREATE",
       data: {
@@ -61,23 +62,24 @@ function App() {
         data: new Date().getTime(),
       },
     });
-  };
+  },[]);
 
   // 업데이트 함수
-  const onUpdate = (targetId)=>{
+  const onUpdate = useCallback((targetId)=>{
     dispatch({
       type:"UPDATE",
       targetId: targetId,
     });
-  };
+  },[]);
 
-  // 삭제 함수
-  const onDelete =(targetId)=>{
+  // mount되었을때만 딱 한번 생성, 리렌더링 되도 다시 생성 x
+  const onDelete = useCallback((targetId)=>{
     dispatch({
       type:"DELETE",
       targetId: targetId,
     });
-  };
+  },[]);
+
 
   // Editor 컴포넌트에 onCreate 함수 전달
   return (
@@ -91,6 +93,5 @@ function App() {
   )
    
 }
-
 
 export default App;
