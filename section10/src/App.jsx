@@ -50,6 +50,7 @@ function App() {
   const idRef =useRef(3);
 
  
+  // 생성 함수
   const onCreate = (content) => {
     dispatch({
       type: "CREATE",
@@ -60,10 +61,9 @@ function App() {
         data: new Date().getTime(),
       },
     });
-
-
   };
 
+  // 업데이트 함수
   const onUpdate = (targetId)=>{
     dispatch({
       type:"UPDATE",
