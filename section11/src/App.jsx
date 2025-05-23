@@ -1,5 +1,5 @@
 import './App.css'
-import { useState, useRef, useReducer, useCallback } from "react";
+import { useState, useRef, useReducer, useCallback, createContext, useMemo } from "react";
 import Editor from "./components/Editor";
 import List from "./components/List";
 import Header from "./components/Header";
@@ -45,6 +45,10 @@ function reducer(state, action){
 
 }
 
+// Context 객체 생성
+export const TodoStateContext = createContext();
+export const TodoDispatchContext = createContext();
+
 function App() {
   
   const [todos, dispatch] =useReducer(reducer, mockData);
@@ -59,7 +63,7 @@ function App() {
         id: idRef.current++,
         isDone: false,
         content: content,
-        data: new Date().getTime(),
+        date: new Date().getTime(),
       },
     });
   },[]);
@@ -80,14 +84,22 @@ function App() {
     });
   },[]);
 
+  const memoizedDispatch = useMemo(()=>{
+    return {onCreate, onUpdate, onDelete };
+  },[]);
 
   // Editor 컴포넌트에 onCreate 함수 전달
   return (
     <div className="App">
 
       <Header/>
-      <Editor onCreate={onCreate}/>
-      <List todos ={todos} onUpdate={onUpdate} onDelete={onDelete}/>
+      <TodoStateContext.Provider value ={todos}>
+        <TodoDispatchContext.Provider value={memoizedDispatch}>
+          <Editor />
+          <List/>
+        </TodoDispatchContext.Provider>
+      </TodoStateContext.Provider>
+        
       
     </div>
   )
