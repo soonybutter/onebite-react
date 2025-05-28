@@ -1,18 +1,30 @@
-# onebite-react_ 감정일기장 APP 프로젝트
+# 감정일기장App 🗓️
+React 기반의 감정일기장 앱 제작하기
 
-## Table of Contents
-* Section 01_JavaScript Throwback
-* Section 02_JavaScript_In_deepth
-* Section 03_Node.js_기초
-* Section_04_React.js_개론
-* Section_05_React.js_입문
-* Section_06_Project01_Counter APP
-* Section_07_Lifecycle
-* Section_08_Project02_TodoList APP
-* Section_09_useReducer
-* Section_10_최적화
-* Section_11_Context
-* Section_12_Project03_감정일기장 APP
+<hr>
+💡React 기반의 감정일기장 APP 프로젝트 by onebite-react <br>
+💡React Hook practice<br>
+💡TodoList APP . Counter 기능 구현<br>
+<br>
+<br>
+⚙️작업기간: 25.04 - 25.05 <br>
+🌱사용언어: HTML, Javascript, CSS , React.js, Node.js, Vite
+<hr>
+
+
+# Table of Contents ✏️
+* Section 01_JavaScript Throwback <br>
+* Section 02_JavaScript_In_deepth <br>
+* Section 03_Node.js_기초 <br>
+* Section_04_React.js_개론 <br>
+* Section_05_React.js_입문 <br>
+* Section_06_Project01_Counter APP <br> 
+* Section_07_Lifecycle <br>
+* Section_08_Project02_TodoList APP <br>
+* Section_09_useReducer <br>
+* Section_10_최적화 <br>
+* Section_11_Context <br>
+* Section_12_Project03_감정일기장 APP <br>
 <!-- * [License](#license) -->
 
 
