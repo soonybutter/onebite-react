@@ -13,7 +13,7 @@ const DiaryItem = ()=>{
             </div>
             <div className="info_section">
                 <div className="created_date">
-                    {new Date().toLocaleString()}
+                    {new Date().toLocaleDateString()}
                 </div>
                 <div className="content">일기 컨텐츠</div>
             </div>
