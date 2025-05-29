@@ -7,13 +7,35 @@ const DiaryItem = ({id, emotionId, createdDate, content})=>{
 
     const nav = useNavigate();
 
+    const getImageSrc =()=>{
+        
+        if(id <=5){
+
+            return getEmotionImage(emotionId);
+        }
+        else{
+            const randomEmotionId = Math.floor(Math.random()*5)+1;
+            return getEmotionImage(randomEmotionId);
+        }
+    }
+
+    const imageName =()=>{
+
+        if(id<=5){
+            return `img_section img_section_${id}`;
+        }
+        else{
+            return `img_section img_section_${1}`;
+        }
+    }
+
     return (
         <div className="DiaryItem">
             <div 
             onClick={()=>nav(`/diary/${id}`)}
-            className={`img_section img_section_${emotionId}`}
+            className={imageName()}
             >
-            <img src={getEmotionImage(emotionId)}/>
+            <img src={getImageSrc()} alt="emotion"></img>
         </div>
         <div 
          onClick={()=>nav(`/diary/${id}`)}
