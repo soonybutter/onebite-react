@@ -19,15 +19,21 @@ import { getEmotionImage } from "./util/get-emotion-image.js";
 const mockData =[
   {
     id: 1,
-    createdDate: new Date().getTime(),
+    createdDate: new Date("2025-05-29").getTime(),
     emotionId:1,
     content:"1번 일기 내용",
   },
   {
     id: 2,
-    createdDate: new Date().getTime(),
+    createdDate: new Date("2025-05-28").getTime(),
     emotionId: 2,
     content: "2번 일기 내용",
+  },
+  {
+    id: 3,
+    createdDate: new Date("2025-04-12").getTime(),
+    emotionId: 3,
+    content: "3번 일기 내용",
   },
 ];
 
@@ -46,8 +52,10 @@ function reducer(state, action){
   }
 }
 
-const DiartStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
+
+
 
 function App() {
 
@@ -97,7 +105,7 @@ function App() {
   return(
     <>
      
-      <DiartStateContext.Provider value={data}>
+      <DiaryStateContext.Provider value={data}>
         <DiaryDispatchContext.Provider value={{
           onCreate,onUpdate,onDelete,
         }}>
@@ -109,7 +117,7 @@ function App() {
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         </DiaryDispatchContext.Provider>
-      </DiartStateContext.Provider>
+      </DiaryStateContext.Provider>
       
     </>
   
