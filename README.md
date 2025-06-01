@@ -7,8 +7,9 @@ React 기반의 감정일기장 앱 제작하기
 💡TodoList APP . Counter 기능 구현<br>
 <br>
 <br>
-⚙️작업기간: 25.04 - 25.05 <br>
-🌱사용언어: HTML, Javascript, CSS , React.js, Node.js, Vite
+⚙️작업기간 : 25.04 - 25.05 <br>
+🌱사용언어 : HTML, Javascript, CSS , React.js, Node.js, Vite <br>
+💻배포 : https://emotion-diary-rn4tg1m7z-soonybutters-projects.vercel.app/<br>
 <hr>
 
 
