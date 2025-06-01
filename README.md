@@ -25,38 +25,16 @@ React 기반의 감정일기장 앱 제작하기
 * Section_10_최적화 <br>
 * Section_11_Context <br>
 * Section_12_Project03_감정일기장 APP <br>
-<!-- * [License](#license) -->
+  <hr>
+
+# Screenshots
+![image](https://github.com/user-attachments/assets/f39832c1-957b-47dd-841d-665563dd13c7) ![image](https://github.com/user-attachments/assets/e5967d2d-857a-46c3-bb39-83c5fd094ae5)
 
 
-<!--
-## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
-<!--
-## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
-
-
-## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
--->
 
 
 <!--
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. 
-
-
 ## Setup
 What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
