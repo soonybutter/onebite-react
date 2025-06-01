@@ -28,7 +28,7 @@ React 기반의 감정일기장 앱 제작하기
   <hr>
 
 # Screenshots
-![image](https://github.com/user-attachments/assets/f39832c1-957b-47dd-841d-665563dd13c7) ![image](https://github.com/user-attachments/assets/e5967d2d-857a-46c3-bb39-83c5fd094ae5)
+![image](https://github.com/user-attachments/assets/f39832c1-957b-47dd-841d-665563dd13c7)
 
 
 
